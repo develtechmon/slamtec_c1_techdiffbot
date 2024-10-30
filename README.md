@@ -29,11 +29,10 @@ In this project, i'm using following components
 | D5       | IN4 |
 
 
-** Left Motor Encoder **
+**Left Motor Encoder**
  Arduino Pin | Encoder Pin | Encoder Color | 
-| -------- | --------      | -------- |
-| D10      | IN1 | 
-| D6       | IN2 |
-| D9       | IN3 |
-| D5       | IN4 |
+| -------- | --------      | --------      |
+| D2       | IN1           | Green         |
+| D3       | IN2           | Yellow        |
+
 
