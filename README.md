@@ -96,4 +96,9 @@ https://github.com/develtechmon/ROS2/blob/main/UserGuide/ssh_installation.md
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_disable_enable_rpi_graphic.md
 ```
 
-## Part 4 : 
+## Part 4 : Install Slamtec C1 package
+
+To install this package, please refer to this userguide
+```
+https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_slamtec_rplidar_installation.md
+```
