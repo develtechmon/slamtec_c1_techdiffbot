@@ -68,7 +68,7 @@ This is my components for this tutorial
 * RPI 4 4GB
 * HDMI and Keyboard
   
-For, `RPI` i'm using the following image which is selected from RPI imageand flash the SD Card using this same tool
+For, `RPI` i'm using the following image which is selected from RPI image and flash the SD Card using this same tool
 ```
 Ubuntu 64-bit
 Ubuntu 22.04.5 LTS
@@ -96,9 +96,16 @@ https://github.com/develtechmon/ROS2/blob/main/UserGuide/ssh_installation.md
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_disable_enable_rpi_graphic.md
 ```
 
-## Part 4 : Install Slamtec C1 package
+## Part 4 : Install Slamtec C1 package in RPI and PC
 
 To install this package, please refer to this userguide
 ```
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_slamtec_rplidar_installation.md
+```
+
+## Part 5 : Configure `STEAM Deck` Controller
+
+Please refer to this userguide on how to setup our `Steam Deck` controller which will be used later to control the robot
+```
+https://github.com/develtechmon/ROS2/blob/main/UserGuide/Steam_Controller_Joystick.md
 ```
