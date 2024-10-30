@@ -47,7 +47,7 @@ In this project, i'm using following components
 | A4(Ana)  | C1            | Yellow        |                         |
 | A5(Ana)  | C2            | Green         |                         |
 | 5V       | VCC(Encoder)  | Blue          |                         |
-|          | M2 (Motor)    | White         | Heatsink Right (Bottom) |
+|          | M2 (Motor)    | White         | Heatsink Right (Top)    |
 
 
 
