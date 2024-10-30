@@ -62,7 +62,11 @@ In this project, i'm using following components
 
 ## Part 2 : Package Installation Inside RPI and PC
 
-For, `RPI` i'm using the following specifications and flash the SD Card using RaspberryPi Imager
+This is my components for this tutorial
+* SD Card 64 GB
+* Raspberry Pi Imager
+* 
+For, `RPI` i'm using the following image which is selected from RPI imageand flash the SD Card using this same tool
 ```
 Ubuntu 64-bit
 Ubuntu 22.04.5 LTS
