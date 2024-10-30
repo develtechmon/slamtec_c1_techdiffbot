@@ -59,6 +59,7 @@ In this project, i'm using following components
 | CPR      | 11x4x30 = 1320 |
 | PPR      | 11 x4 = 44     |
 
+
 ## Part 2 : Package Installation Inside RPI and PC
 
 For, `RPI` i'm using the following specifications and flash the SD Card using RaspberryPi Imager
