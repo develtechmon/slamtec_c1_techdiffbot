@@ -39,6 +39,7 @@ In this project, i'm using following components
 | 5V       | VCC(Encoder)  | Blue          |                          |
 |          | M2 (Motor)    | White         | Heatsink Left (Top)      |
 
+
 **Right Motor Encoder**
  Arduino Pin | Encoder Pin | Encoder Color | Motor Connection        |
 | -------- | --------      | --------      | --------                |
