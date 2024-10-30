@@ -19,8 +19,10 @@ In this project, i'm using following components
 * 11V 5500mAH battery
 
 ### Pin Assignments
-| Arduino Pin | L298N Pin |
-| D10 | IN1 |
-| D6 | IN2 |
-| D9 | IN3 |
-| D5 | IN4 |
+ Arduino Pin | L298N Pin
+| -------- | --------
+| D10      | IN1 |
+| D6       | IN2 |
+| D9       | IN3 |
+| D5       | IN4 |
+
