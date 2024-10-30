@@ -19,9 +19,20 @@ In this project, i'm using following components
 * 11V 5500mAH battery
 
 ### Pin Assignments
+
+**Motor Driver**
  Arduino Pin | L298N Pin
 | -------- | --------
 | D10      | IN1 |
+| D6       | IN2 |
+| D9       | IN3 |
+| D5       | IN4 |
+
+
+** Left Motor Encoder **
+ Arduino Pin | Encoder Pin | Encoder Color | 
+| -------- | --------      | -------- |
+| D10      | IN1 | 
 | D6       | IN2 |
 | D9       | IN3 |
 | D5       | IN4 |
