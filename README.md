@@ -30,8 +30,8 @@ In this project, i'm using following components
 
 
 **Left Motor Encoder**
- Arduino Pin | Encoder Pin | Encoder Color | Motor Connection         |
-| -------- | --------      | --------      | --------                 |
+ Arduino Pin | Encoder Pin | Encoder Color | Motor Connection         |  
+| -------- | --------      | --------      | --------                 |  
 |          | M1 (Motor)    | Red           | Heatsink Left (Bottom)   |
 | GND      | GND           | Black         |                          |
 | D3(Intr) | C1            | Yellow        |                          |
@@ -51,6 +51,14 @@ In this project, i'm using following components
 |          | M2 (Motor)    | White         | Heatsink Right (Top)    |
 
 
+**Motor Specifications**
+ Params    | Value
+| -------- | --------
+| Gear     | 1:30           |
+| RPM      | 333            |
+| CPR      | 11x4x30 = 1320 |
+| PPR      | 11 x4 = 44     |
+
 ## Part 2 : Package Installation Inside RPI and PC
 
 For, `RPI` i'm using the following specifications and flash the SD Card using RaspberryPi Imager
@@ -67,7 +75,7 @@ In next step, you're going to install ROS2 Humbles inside your `RPI` and `PC` an
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_humble_installation_packages_guide.md
 ```
 
-## Part 3 : Enable SSH and Disable Graphic
+## Part 3 : Enable SSH and Disable Graphic Inside RPI
 
 For most of time, you will need to work and connect with `SSH` to RPI and work only with console instead of graphic interface. 
 
@@ -80,3 +88,5 @@ https://github.com/develtechmon/ROS2/blob/main/UserGuide/ssh_installation.md
 ```
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_disable_enable_rpi_graphic.md
 ```
+
+## Part 4 : 
