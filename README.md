@@ -123,3 +123,22 @@ rosdep update && rosdep install --from-path src --ignore-src -y
 colcon buiild
 ```
 
+## Launch Oor Robot and SLAM !
+
+In your RPI, please go to  following command
+```
+cd ~/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws
+```
+
+Run this command to launch our REAL robot
+```
+ros2 launch bumperbot_bringup real_robot.launch.py 
+```
+
+Once done, then we can run `SLAM` either from RPI or PC.
+```
+ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=False
+```
+
+
+
