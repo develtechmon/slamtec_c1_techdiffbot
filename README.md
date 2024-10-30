@@ -109,3 +109,17 @@ Please refer to this userguide on how to setup our `Steam Deck` controller which
 ```
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/Steam_Controller_Joystick.md
 ```
+
+## Part 6 : Git Clone this package
+
+Now let's start building and compiler our robot. Open new terminal in PC or SSH to RPI and please do the following:
+```
+https://github.com/develtechmon/slamtec_c1_techdiffbot.git
+cd slamtec_c1_techdiffbot/
+cd bumperbot_ws/
+
+rosdep install --from-paths src --ignore-src -r -y
+rosdep update && rosdep install --from-path src --ignore-src -y
+colcon buiild
+```
+
