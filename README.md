@@ -60,9 +60,23 @@ Ubuntu 22.04.5 LTS
 Desktop Version
 ```
 
-Please make sure you have install ROS2 Humbles inside your `RPI` and the associated packages. Please refer to this documents
+Once done, please connect your `Flashed SD cards` to RPI 4B and follow the setup from there to connect to network and do necessary installation.
+
+In next step, you're going to install ROS2 Humbles inside your `RPI` and `PC` and all  associated packages. Please refer to this documents on how to do this setup.
 ```
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_humble_installation_packages_guide.md
 ```
 
+## Part 3 : Enable SSH and Disable Graphic
 
+For most of time, you will need to work and connect with `SSH` to RPI and work only with console instead of graphic interface. 
+
+Enable `SSH`
+```
+https://github.com/develtechmon/ROS2/blob/main/UserGuide/ssh_installation.md
+```
+
+Disable Graphic To Save `RAM`
+```
+https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_disable_enable_rpi_graphic.md
+```
