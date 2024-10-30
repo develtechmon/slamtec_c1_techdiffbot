@@ -8,7 +8,7 @@ This is userguide on how to start  this robot build. This section will cover the
 * ROS2 package installation
 * Run Command
 
-## Part 1 : Schematic
+## Part 1 : Schematic Pin and Components
 
 In this project, i'm using following components
 * Slamtec C1 Lidar x 1
@@ -17,3 +17,10 @@ In this project, i'm using following components
 * Arduino Nano x 1
 * Motor Driver L298N x 1
 * 11V 5500mAH battery
+
+### Pin Assignments
+| Arduino Pin | L298N Pin |
+| D10 | IN1 |
+| D6 | IN2 |
+| D9 | IN3 |
+| D5 | IN4 |
