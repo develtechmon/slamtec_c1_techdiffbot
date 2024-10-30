@@ -71,12 +71,12 @@ https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_humble_installatio
 
 For most of time, you will need to work and connect with `SSH` to RPI and work only with console instead of graphic interface. 
 
-Enable `SSH`
+### Enable `SSH`
 ```
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ssh_installation.md
 ```
 
-Disable Graphic To Save `RAM`
+### Disable Graphic To Save `RAM`
 ```
 https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_disable_enable_rpi_graphic.md
 ```
