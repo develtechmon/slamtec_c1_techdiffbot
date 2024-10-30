@@ -51,9 +51,9 @@ In this project, i'm using following components
 |          | M2 (Motor)    | White         | Heatsink Right (Top)    |
 
 
-## Part 2 : Package Installation Inside RPI
+## Part 2 : Package Installation Inside RPI and PC
 
-For, RPI i'm using the following specifications and flash the SD Card using RaspberryPi Imager
+***For, RPI*** i'm using the following specifications and flash the SD Card using RaspberryPi Imager
 ```
 Ubuntu 64-bit
 Ubuntu 22.04.5 LTS
