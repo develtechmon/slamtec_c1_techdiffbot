@@ -38,3 +38,13 @@ In this project, i'm using following components
 | D2(Intr) | C2            | Green         |
 | 5V       | VCC(Encoder)  | Blue          |
 |          | M2 (Motor)    | White         |
+
+**Right Motor Encoder**
+ Arduino Pin | Encoder Pin | Encoder Color | 
+| -------- | --------      | --------      |
+|          | M1 (Motor)    | Red           |
+| GND      | GND           | Black         |
+| A4(Ana)  | C1            | Yellow        |
+| A5(Ana)  | C2            | Green         |
+| 5V       | VCC(Encoder)  | Blue          |
+|          | M2 (Motor)    | White         |
