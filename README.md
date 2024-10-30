@@ -51,5 +51,18 @@ In this project, i'm using following components
 |          | M2 (Motor)    | White         | Heatsink Right (Top)    |
 
 
+## Part 2 : Package Installation Inside RPI
+
+For, RPI i'm using the following specifications and flash the SD Card using RaspberryPi Imager
+```
+Ubuntu 64-bit
+Ubuntu 22.04.5 LTS
+Desktop Version
+```
+
+Please make sure you have install ROS2 Humbles inside your `RPI` and the associated packages. Please refer to this documents
+```
+https://github.com/develtechmon/ROS2/blob/main/UserGuide/ros2_humble_installation_packages_guide.md
+```
 
 
