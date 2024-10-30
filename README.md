@@ -32,7 +32,9 @@ In this project, i'm using following components
 **Left Motor Encoder**
  Arduino Pin | Encoder Pin | Encoder Color | 
 | -------- | --------      | --------      |
+|          | M1            | White         |
+|          | M2            | Red           |
+|          | GND           | Black         |
+|          | 5V            | Blue          |
 | D2       | IN1           | Green         |
 | D3       | IN2           | Yellow        |
-
-
