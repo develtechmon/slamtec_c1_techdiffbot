@@ -65,7 +65,9 @@ In this project, i'm using following components
 This is my components for this tutorial
 * SD Card 64 GB
 * Raspberry Pi Imager
-* 
+* RPI 4 4GB
+* HDMI and Keyboard
+  
 For, `RPI` i'm using the following image which is selected from RPI imageand flash the SD Card using this same tool
 ```
 Ubuntu 64-bit
