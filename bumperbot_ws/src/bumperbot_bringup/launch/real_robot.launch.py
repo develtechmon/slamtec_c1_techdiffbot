@@ -13,6 +13,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 import xacro
 import os
 
+## I'll add MPu6050 Sensor here
+
 def generate_launch_description():
     package_name = 'bumperbot_bringup'
 
@@ -23,7 +25,7 @@ def generate_launch_description():
             "hardware_interface.launch.py"
         ),
     )   
-    
+
     laser_driver = Node(
             package="rplidar_ros",
             executable="rplidar_node",
