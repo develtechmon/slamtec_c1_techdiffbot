@@ -133,7 +133,7 @@ cd bumperbot_ws/
 
 rosdep install --from-paths src --ignore-src -r -y
 rosdep update && rosdep install --from-path src --ignore-src -y
-colcon buiild
+colcon build
 ```
 
 ## Launch Our Robot and SLAM !
