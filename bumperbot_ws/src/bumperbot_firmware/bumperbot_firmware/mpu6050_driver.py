@@ -50,7 +50,9 @@ class MPU6050_Driver(Node):
             gyro_x = self.read_raw_data(GYRO_XOUT_H)
             gyro_y = self.read_raw_data(GYRO_YOUT_H)
             gyro_z = self.read_raw_data(GYRO_ZOUT_H)
-            
+           
+            #print(gyro_x, gyro_y, gyro_z)
+
             # Full scale range +/- 250 degree/C as per sensitivity scale factor     
             self.imu_msg_.linear_acceleration.x = acc_x / 1670.13
             self.imu_msg_.linear_acceleration.y = acc_y / 1670.13
