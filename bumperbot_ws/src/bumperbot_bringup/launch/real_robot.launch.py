@@ -13,8 +13,6 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 import xacro
 import os
 
-## I'll add MPu6050 Sensor here
-
 def generate_launch_description():
     package_name = 'bumperbot_bringup'
 
@@ -72,6 +70,11 @@ def generate_launch_description():
             )])
     )
 
+    imu_driver_node = Node(
+        package="bumperbot_firmware",
+        executable="mpu6050_driver.py"
+    )
+    
     return LaunchDescription([    
     hardware_interface,
     fake_odom,
@@ -80,4 +83,5 @@ def generate_launch_description():
     diff_drive_spawner,
     joint_broad_spawner,
     joystick,
+    imu_driver_node
     ])
