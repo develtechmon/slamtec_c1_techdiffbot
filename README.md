@@ -174,6 +174,11 @@ Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
 ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
 ```
 
+Launch `rviz`
+```
+rvuz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
+```
+
 Once done with mapping, please save the map and Gazebo world as well
 
 ## Real Robot 
@@ -236,4 +241,10 @@ Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
 ```
 ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
 ```
+
+Launch `rviz`
+```
+rvuz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
+```
+
 
