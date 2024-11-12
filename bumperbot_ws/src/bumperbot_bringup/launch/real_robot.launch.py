@@ -23,7 +23,7 @@ def generate_launch_description():
             "hardware_interface.launch.py"
         ),
     )   
-    
+
     laser_driver = Node(
             package="rplidar_ros",
             executable="rplidar_node",
@@ -70,6 +70,11 @@ def generate_launch_description():
             )])
     )
 
+    imu_driver_node = Node(
+        package="bumperbot_firmware",
+        executable="mpu6050_driver.py"
+    )
+    
     return LaunchDescription([    
     hardware_interface,
     fake_odom,
@@ -78,4 +83,5 @@ def generate_launch_description():
     diff_drive_spawner,
     joint_broad_spawner,
     joystick,
+    imu_driver_node
     ])

@@ -13,6 +13,7 @@ def generate_launch_description():
     joy_node = Node(
             package='joy',
             executable='joy_node',
+            name='joy_node',
             parameters=[joy_params],
          )
 
