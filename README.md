@@ -166,7 +166,7 @@ Then enable this file as follow:
 ```
 Run this command to launch our SIMULATION robot in PC
 ```
-ros2 launch bumperbot_bringup gazebo.sim.launch.py 
+ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=./src/bumperbot_bringup/world/map_v1 
 ```
 
 Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
@@ -176,10 +176,10 @@ ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
 
 Launch `rviz`
 ```
-rvuz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
+rviz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
 ```
 
-Once done with mapping, please save the map and Gazebo world as well
+Once done with mapping, please save the map and Gazebo world as well and please ensure the robot return to its original position
 
 ## Real Robot 
 In your RPI, please go to  following command
@@ -228,13 +228,13 @@ Then enable this file as follow:
    scan_topic: /scan
    use_map_saver: true
    
-   mode: localization
-   map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/serialize_map_v1
-   map_start_at_dock: true
+   mode: localization <--------- Enable this
+   map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/serialize_map_v1 <--------- Enable this
+   map_start_at_dock: true <--------- Enable this
 ```
-Run this command to launch our SIMULATION robot in PC
+Run this command to launch our `SIMULATION` robot in PC
 ```
-ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=./src/techdiffbot/world/my_maze 
+ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=./src/bumperbot_bringup/world/map_v1 
 ```
 
 Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
@@ -246,5 +246,6 @@ Launch `rviz`
 ```
 rvuz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
 ```
+Once done with mapping, please save the map and Gazebo world as well and please ensure the robot return to its original position
 
 
