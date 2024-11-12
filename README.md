@@ -163,7 +163,6 @@ pip3 install smbus
 When you run this command,
 ```
 sudo i2cdetect -y 1
-
 ```
 you will see your `I2C` address is detected as follow. This show our MPU6050 is recognized by `RaspberryPi`
 ```
