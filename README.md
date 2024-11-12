@@ -149,7 +149,21 @@ In your PC, please go to  following command
 ```
 cd ~/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws
 ```
-
+We need to enable this setting to start `mapping` as follow
+```
+vi src/bumperbot_bringup/config/mapper_params_online_async.yaml 
+```
+Then enable this file as follow:
+```
+# ROS Parameters
+   odom_frame: odom
+   map_frame: map
+   base_frame: base_footprint
+   scan_topic: /scan
+   use_map_saver: true
+   
+   mode: mapping <----------- Enable this
+```
 Run this command to launch our SIMULATION robot in PC
 ```
 ros2 launch bumperbot_bringup gazebo.sim.launch.py 
@@ -185,3 +199,39 @@ However, if you don't have joystick, we can control the robot using keyboard. Pl
 ```
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap /cmd_vel:=/diff_cont/cmd_vel_unstamped
 ```
+
+## Launch our Robot and Nav2
+
+## Simulation
+In your PC, please go to  following command
+```
+cd ~/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws
+```
+
+We need to enable this setting to start `mapping` as follow
+```
+vi src/bumperbot_bringup/config/mapper_params_online_async.yaml 
+```
+Then enable this file as follow:
+```
+# ROS Parameters
+   odom_frame: odom
+   map_frame: map
+   base_frame: base_footprint
+   scan_topic: /scan
+   use_map_saver: true
+   
+   mode: localization
+   map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/serialize_map_v1
+   map_start_at_dock: true
+
+Run this command to launch our SIMULATION robot in PC
+```
+ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=./src/techdiffbot/world/my_maze 
+```
+
+Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
+```
+ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
+```
+
