@@ -224,7 +224,7 @@ Then enable this file as follow:
    mode: localization
    map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/serialize_map_v1
    map_start_at_dock: true
-
+```
 Run this command to launch our SIMULATION robot in PC
 ```
 ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=./src/techdiffbot/world/my_maze 
