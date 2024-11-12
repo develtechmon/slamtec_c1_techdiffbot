@@ -28,6 +28,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'twist_relay = bumperbot_bringup.twist_relay:main',
+            'safety_stop = bumperbot_bringup.safety_stop:main',
         ],
     },
 )
