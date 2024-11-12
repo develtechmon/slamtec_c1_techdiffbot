@@ -262,9 +262,9 @@ rviz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
 
 and select the `rviz` configuration as follow
 ```
- Fixed Frame - map
-  Map Topic - Global../Costmap
-  Color Scheme - Costmap
+Fixed Frame - map
+Map Topic - Global../Costmap
+Color Scheme - Costmap
 ```
 
 From `rviz`
