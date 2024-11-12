@@ -244,7 +244,7 @@ ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
 
 Launch `rviz`
 ```
-rvuz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
+rviz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
 ```
 Once done with mapping, please save the map and Gazebo world as well and please ensure the robot return to its original position
 
