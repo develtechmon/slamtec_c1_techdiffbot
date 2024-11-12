@@ -145,17 +145,17 @@ colcon build --parallel-workers 2
 ## Launch Our Robot and SLAM !
 
 ## Simulation 
-In your RPI, please go to  following command
+In your PC, please go to  following command
 ```
 cd ~/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws
 ```
 
-Run this command to launch our REAL robot in RPI
+Run this command to launch our SIMULATION robot in PC
 ```
-ros2 launch bumperbot_bringup real_robot.launch.py 
+ros2 launch bumperbot_bringup gazebo.sim.launch.py 
 ```
 
-Once done, then we can run `SLAM` either from RPI or PC and set `use_sim_time:=True`
+Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
 ```
 ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
 ```
