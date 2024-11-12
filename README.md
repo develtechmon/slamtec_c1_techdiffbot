@@ -174,6 +174,8 @@ Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
 ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
 ```
 
+Once done with mapping, please save the map and Gazebo world as well
+
 ## Real Robot 
 In your RPI, please go to  following command
 ```
