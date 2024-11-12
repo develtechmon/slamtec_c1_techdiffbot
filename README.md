@@ -164,7 +164,7 @@ Then enable this file as follow:
    
    mode: mapping <----------- Enable this
 ```
-Run this command to launch our SIMULATION robot in PC
+Run this command to launch our `SIMULATION` robot in PC
 ```
 ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=./src/bumperbot_bringup/world/map_v1 
 ```
@@ -179,7 +179,7 @@ Launch `rviz`
 rviz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
 ```
 
-Once done with mapping, please save the map and Gazebo world as well and please ensure the robot return to its original position
+Once done with mapping, return to its original position and please save the map and our Gazebo world as well and please ensure the robot 
 
 ## Real Robot 
 In your RPI, please go to  following command
@@ -197,6 +197,13 @@ Once done, then we can run `SLAM` either from RPI or PC and set `use_sim_time:=F
 ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=False
 ```
 
+Launch `rviz`
+```
+rviz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
+```
+
+Once done with mapping, return to its original position and please save the map and our real world as well and please ensure the robot 
+
 ## Move and Control Your robot
 
 You can use your `Steam Controller` Joystick or any other Joystick to control the robot. When you launch this script, 
@@ -207,7 +214,7 @@ However, if you don't have joystick, we can control the robot using keyboard. Pl
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap /cmd_vel:=/diff_cont/cmd_vel_unstamped
 ```
 
-## Launch our Robot and Nav2
+## Launch our Robot and Nav2 !
 
 ## Simulation
 In your PC, please go to  following command
@@ -215,10 +222,11 @@ In your PC, please go to  following command
 cd ~/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws
 ```
 
-We need to enable this setting to start `mapping` as follow
+We need to enable this setting to start `localization` as follow
 ```
 vi src/bumperbot_bringup/config/mapper_params_online_async.yaml 
 ```
+
 Then enable this file as follow:
 ```
 # ROS Parameters
@@ -229,7 +237,7 @@ Then enable this file as follow:
    use_map_saver: true
    
    mode: localization <--------- Enable this
-   map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/serialize_map_v1 <--------- Enable this
+   map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/serialize_map_v1 <--------- Set this path to our saved map
    map_start_at_dock: true <--------- Enable this
 ```
 Run this command to launch our `SIMULATION` robot in PC
@@ -242,10 +250,27 @@ Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
 ros2 launch bumperbot_bringup slam.launch.py use_sim_time:=True
 ```
 
+Launch our `NAV2`
+```
+ros2 launch bumperbot_bringup navigation_launch.py use_sim_time:=true
+```
+
 Launch `rviz`
 ```
 rviz2 -d src/bumperbot_bringup/rviz2/slam_rviz.rviz
 ```
-Once done with mapping, please save the map and Gazebo world as well and please ensure the robot return to its original position
+
+and select the `rviz` configuration as follow
+```
+ Fixed Frame - map
+  Map Topic - Global../Costmap
+  Color Scheme - Costmap
+```
+
+From `rviz`
+```
+Select 2D Goal Pose and start navigating
+```
+
 
 
