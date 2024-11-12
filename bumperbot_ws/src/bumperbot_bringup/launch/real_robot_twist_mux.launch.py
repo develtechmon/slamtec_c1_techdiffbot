@@ -70,6 +70,13 @@ def generate_launch_description():
             )]),launch_arguments={'use_sim_time': 'false'}.items()
     )
 
+    safety_stop = Node(
+        package=package_name,
+        executable="safety_stop",
+        output="screen",
+        parameters=[{"use_sim_time": False}]
+    )
+
     imu_driver_node = Node(
         package="bumperbot_firmware",
         executable="mpu6050_driver.py"
@@ -83,5 +90,6 @@ def generate_launch_description():
     diff_drive_spawner,
     joint_broad_spawner,
     joystick,
+    safety_stop,
     imu_driver_node
     ])
