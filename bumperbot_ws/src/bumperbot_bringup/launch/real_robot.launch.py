@@ -67,7 +67,14 @@ def generate_launch_description():
     joystick = IncludeLaunchDescription(
             PythonLaunchDescriptionSource([os.path.join(
                 get_package_share_directory(package_name),'launch','joystick.control.launch.py'
-            )])
+            )]),launch_arguments={'use_sim_time': 'false'}.items()
+    )
+
+    safety_stop = Node(
+        package=package_name,
+        executable="safety_stop",
+        output="screen",
+        parameters=[{"use_sim_time": False}]
     )
 
     imu_driver_node = Node(
@@ -77,11 +84,12 @@ def generate_launch_description():
     
     return LaunchDescription([    
     hardware_interface,
-    fake_odom,
+    #fake_odom,
     laser_driver,
-    twist_mux,
+    #twist_mux,
     diff_drive_spawner,
     joint_broad_spawner,
     joystick,
+    safety_stop,
     imu_driver_node
     ])

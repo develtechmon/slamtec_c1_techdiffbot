@@ -52,6 +52,14 @@ def generate_launch_description():
         
     )
 
+    safety_stop = Node(
+        package=package_name,
+        executable="safety_stop",
+        output="screen",
+        parameters=[{"use_sim_time": True}]
+    )
+
+
     twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
     twist_mux = Node(
             package="twist_mux",
@@ -63,16 +71,12 @@ def generate_launch_description():
     return LaunchDescription([    
 
         rsp,
-        twist_mux,
+        #twist_mux,
         gazebo,
         spawn,
         diff_drive_spawner,
         joint_broad_spawner,
         joystick,
+        safety_stop,
         #rviz,
-
-        # DeclareLaunchArgument(
-        #     'use_sim_time',
-        #     default_value='false',
-        #     description='Use sim time if true'),
     ])
