@@ -308,4 +308,46 @@ From `rviz`
 Select 2D Goal Pose and start navigating
 ```
 
+## Launch our Robot using AMCL and Nav2 !
+
+This is the modifications i made that combine both `localization` and `navigation` launch file.
+
+## Simulation
+In your PC, please go to  following command
+```
+cd ~/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws
+```
+
+Launch our `AMCL` and `NAV2`
+```
+ros2 launch bumperbot_bringup autonomous_nav_sim.launch.py use_sim_time:=True world:=src/bumperbot_bringup/world/map_v1 
+```
+
+Launch `rviz`
+```
+rviz2 
+```
+
+and select the `rviz` configuration as follow
+```
+Fixed Frame - map
+Map Topic - Global../Costmap
+Color Scheme - Costmap
+Durability Policy - Transient Local
+Path - Topic - /plan
+```
+
+From `rviz`
+```
+select 2D Pose Estimate and select your initial position and please ensure it align with robot orientation.
+This will generate a Global Costmap view
+```
+
+And from `rviz`
+```
+Select 2D Goal Pose and start navigating
+```
+
+
+
 
