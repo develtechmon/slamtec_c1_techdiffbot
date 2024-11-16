@@ -27,7 +27,6 @@ def generate_launch_description():
                         get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
         )
     
-
     spawn = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'botluke'],
@@ -49,7 +48,6 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory(package_name),'launch','joystick.control.launch.py'
         )]), launch_arguments={'use_sim_time': 'true'}.items()
-        
     )
 
     safety_stop = Node(
@@ -67,7 +65,19 @@ def generate_launch_description():
             parameters=[twist_mux_params, {'use_sim_time': True}],
             remappings=[('/cmd_vel_out','/diff_cont/cmd_vel_unstamped')]
         )
+    
+    localization = IncludeLaunchDescription(
+    PythonLaunchDescriptionSource([os.path.join(
+        get_package_share_directory(package_name), 'launch', 'localization.launch.py'
+        )]), launch_arguments={'use_sim_time': 'true'}.items()
+    )
 
+    navigation = IncludeLaunchDescription(
+    PythonLaunchDescriptionSource([os.path.join(
+        get_package_share_directory(package_name), 'launch', 'nav.launch.py'
+        )]), launch_arguments={'use_sim_time': 'true'}.items()
+    )
+    
     return LaunchDescription([    
 
         rsp,
@@ -78,5 +88,7 @@ def generate_launch_description():
         joint_broad_spawner,
         joystick,
         #safety_stop,
+        localization,
+        navigation,
         #rviz,
     ])

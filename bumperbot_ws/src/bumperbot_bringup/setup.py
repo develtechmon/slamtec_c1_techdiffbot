@@ -17,6 +17,7 @@ setup(
         (os.path.join('share', package_name, 'rviz2'), glob('rviz2/*')),
         (os.path.join('share', package_name, 'urdf'),  glob('urdf/*')),
         (os.path.join('share', package_name, 'world'), glob('world/*')),
+        (os.path.join('share', package_name, 'map'), glob('map/*')),
 
     ],
     install_requires=['setuptools'],
