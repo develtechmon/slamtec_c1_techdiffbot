@@ -300,6 +300,7 @@ and select the `rviz` configuration as follow
 Fixed Frame - map
 Map Topic - Global../Costmap
 Color Scheme - Costmap
+Path - Topic - /plan
 ```
 
 From `rviz`
