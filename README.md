@@ -348,6 +348,10 @@ And from `rviz`
 Select 2D Goal Pose and start navigating
 ```
 
+And from `rviz` click `+` sign and add `GoalTool` from `nav2_rviz_plugins`
+```
+You can now use Nav2 Goal to move the robot
+```
 
 
 
