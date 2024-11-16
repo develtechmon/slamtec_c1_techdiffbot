@@ -354,4 +354,16 @@ You can now use Nav2 Goal to move the robot
 ```
 
 
+## Additional Notes
+
+To display plot graph of `imu data`. You can run following command. Select topic and drag the parameter to graph view
+```
+ros2 run plotjuggler plotjuggler 
+```
+
+Moreover, you can use `rviz` to view the data of `imu`. Please ensure to install following packages first if you havent
+```
+sudo apt install ros-$ROS_DISTRO-plotjuggler-ros
+sudo apt-get install ros-humble-rviz-imu-plugin
+```
 
