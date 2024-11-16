@@ -5,6 +5,7 @@
 <gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
         <parameters>$(find bumperbot_bringup)/config/bumperbot_bringup.yaml</parameters>
+        <!-- <parameters>$(find bumperbot_bringup)/config/bumperbot_controllers.yaml</parameters> -->
     </plugin>
 </gazebo>
 

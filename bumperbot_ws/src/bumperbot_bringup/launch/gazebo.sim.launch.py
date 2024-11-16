@@ -77,6 +77,6 @@ def generate_launch_description():
         diff_drive_spawner,
         joint_broad_spawner,
         joystick,
-        #safety_stop,
+        safety_stop,
         #rviz,
     ])
