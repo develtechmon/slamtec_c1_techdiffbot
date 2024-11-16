@@ -31,6 +31,8 @@ setup(
         'console_scripts': [
             'twist_relay = bumperbot_bringup.twist_relay:main',
             'safety_stop = bumperbot_bringup.safety_stop:main',
+            'imu_republisher = bumperbot_bringup.imu_republisher:main',
+
         ],
     },
 )
