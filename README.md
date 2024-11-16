@@ -272,12 +272,12 @@ Then enable this file as follow:
    use_map_saver: true
    
    mode: localization <--------- Enable this
-   map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/serialize_map_v1 <--------- Set this path to our saved map
+   map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/src/bumperbot_bringup/map/serialize_map_v1 <--------- Set this path to our saved map
    map_start_at_dock: true <--------- Enable this
 ```
 Run this command to launch our `SIMULATION` robot in PC
 ```
-ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=./src/bumperbot_bringup/world/map_v1 
+ros2 launch bumperbot_bringup gazebo.sim.launch.py world:=src/bumperbot_bringup/world/map_v1
 ```
 
 Once done, then we can run `SLAM` either from PC and set `use_sim_time:=True`
