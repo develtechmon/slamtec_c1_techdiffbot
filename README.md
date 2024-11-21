@@ -442,3 +442,15 @@ odom0_config: [true,  true,  true,
                 false, false, true,
                 false, false, false]
 ```
+
+* Edit `nav2_params.yaml` and edit the following
+```
+bt_navigator:
+  ros__parameters:
+    use_sim_time: True
+    global_frame: map
+    robot_base_frame: base_link
+    odom_topic: /odometry/filtered # <----- Change this, default: /odom
+    bt_loop_duration: 10
+    default_server_timeout: 20
+```
