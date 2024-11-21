@@ -582,5 +582,9 @@ Path - Topic - /plan
 
 From `rviz`
 ```
-Select 2D Goal Pose and start navigating
+Select 2D Goal Pose and start navigating or click + to add Nav2 Goal
 ```
+
+Expected output will be as follow:
+![image](https://github.com/user-attachments/assets/96fb0dbe-10cc-4f25-b538-687c86e9b87e)
+
