@@ -9,7 +9,7 @@ ekf_filter_node:
       # set to true, no 3D information will be used in your state estimate. Use this if you are operating in a planar
       # environment and want to ignore the effect of small variations in the ground plane that might otherwise be detected
       # by, for example, an IMU. Defaults to false if unspecified.
-      two_d_mode: true
+      two_d_mode: false
 
       # Whether to broadcast the transformation over the /tf topic. Defaults to true if unspecified.
       publish_tf: true
@@ -50,13 +50,13 @@ ekf_filter_node:
       # has no pose information, so the first six values would be meaningless in that case. Each vector defaults to all false
       # if unspecified, effectively making this parameter required for each sensor.
       imu0_config: [false, false, false,
-                    false, false, true,
-                    false, false, false,
-                    false, false, true,
-                    true,  false, false]
+                  true,  true,  true,
+                  false, false, false,
+                  false, false, false,
+                  false, false, false]
 
-      imu0_differential: true
-      imu0_pose_use_child_frame: false
+      #imu0_differential: true
+      #imu0_pose_use_child_frame: false
 
       # The filter accepts an arbitrary number of inputs from each input message type (nav_msgs/Odometry,
       # geometry_msgs/PoseWithCovarianceStamped, geometry_msgs/TwistWithCovarianceStamped,
@@ -72,12 +72,12 @@ ekf_filter_node:
       # do not provide some of the state variables estimated by the filter. For example, a TwistWithCovarianceStamped message
       # has no pose information, so the first six values would be meaningless in that case. Each vector defaults to all false
       # if unspecified, effectively making this parameter required for each sensor.
-      odom0_config: [false, false, false,
-                     false, false, false,
-                     true,  true,  false,
-                     false, false, false,
-                     false, false, false]
-
+      odom0_config: [true,  true,  true,
+                      false, false, false,
+                      false, false, false,
+                      false, false, true,
+                      false, false, false]
+                      
       # [ADVANCED] When measuring one pose variable with two sensors, a situation can arise in which both sensors under-
       # report their covariances. This can lead to the filter rapidly jumping back and forth between each measurement as they
       # arrive. In these cases, it often makes sense to (a) correct the measurement covariances, or (b) if velocity is also
@@ -86,8 +86,8 @@ ekf_filter_node:
       # data is converted to velocity data by differentiating the absolute pose measurements. These velocities are then
       # integrated as usual. NOTE: this only applies to sensors that provide pose measurements; setting differential to true
       # for twist measurements has no effect.
-      odom0_differential: true
-      odom0_pose_use_child_frame: false
+      #odom0_differential: true
+      #odom0_pose_use_child_frame: false
 
       # [ADVANCED] The process noise covariance matrix can be difficult to tune, and can vary for each application, so it is
       # exposed as a configuration parameter. This matrix represents the noise we add to the total error after each
