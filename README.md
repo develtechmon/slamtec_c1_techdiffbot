@@ -384,5 +384,61 @@ from `/ekf_filter_node`.
 
 ![image](https://github.com/user-attachments/assets/2ee5ab64-5daa-471f-a38f-041da23d98c6)
 
+To enable the fuse, we have modify the following parameters in this file
 
+* Edit `bumperbot_controllers.yaml` and make changes follow
+```
+enable_odom_tf: false
+```
 
+* Edit `gazebo.sim.launch.py` and enable this `launcher`
+```
+safety_stop
+local_imu <----- This one
+```
+
+* Edit `bumperbot_gazebo.xacro` to point to our new controllers
+```
+<gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+        <!-- <parameters>$(find bumperbot_bringup)/config/bumperbot_bringup.yaml</parameters> -->
+        <parameters>$(find bumperbot_bringup)/config/bumperbot_controllers.yaml</parameters> <----- This one
+    </plugin>
+</gazebo>
+```
+* Edit `ekf.yaml` and add/edit the following parameters. I highly suggest to refer to this `userguide` if you want
+to know what does this file mean and how to create a new `filtered_odom`.
+
+```
+https://docs.nav2.org/setup_guides/odom/setup_odom.html#
+```
+
+Edit the following file and refer to above link to understand.
+
+The order of the values of this parameter is `x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az`.
+
+In our project, we set everything in odom0_config to false except the 1st, 2nd, 3rd, and 12th entries, which means
+the filter will only use the x, y, z, and the vyaw values of odom0.
+
+In the imu0_config matrix, you’ll notice that only roll, pitch, and yaw are used. 
+```
+two_d_mode: false
+publish_tf: true
+base_link_frame: base_footprint <-- Please ensure this match to our URDF and local_localization.launch.py
+
+ # IMU Configuration
+imu0: imu/out
+imu0_config: [false, false, false,
+            true,  true,  true,
+            false, false, false,
+            false, false, false,
+            false, false, false]
+
+# ODOM Configuration
+odom0: diff_cont/odom
+odom0_config: [true,  true,  true,
+                false, false, false,
+                false, false, false,
+                false, false, true,
+                false, false, false]
+```
