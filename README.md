@@ -367,3 +367,22 @@ sudo apt install ros-$ROS_DISTRO-plotjuggler-ros
 sudo apt-get install ros-humble-rviz-imu-plugin
 ```
 
+## Fusing IMU and Odometry using Kalman Filter and Create a new Filtered Odom as a new source of odometry
+
+In this step, i'm going to show how to fuse `/imu/out` and `/diff_cont/odom` topic and create a new `/odometry/filtered` topic which is
+coming from `/ekf_filter_node`.
+
+We will use this `/odometry/filtered` in `SLAM` and `NAV` as new source of odometry.
+
+Expected output will be as follow, and use this command to see all the listed topic
+```
+rqt 
+```
+
+and you will see result of rqt graph as follow. Here, you can see `1 - /diff_cont/odom`, `2 - /imut/out` are fused and generate an output `3 - /odometry/filtered` output coming
+from `/ekf_filter_node`.
+
+![image](https://github.com/user-attachments/assets/2ee5ab64-5daa-471f-a38f-041da23d98c6)
+
+
+
