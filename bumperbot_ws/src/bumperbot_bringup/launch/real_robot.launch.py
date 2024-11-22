@@ -81,6 +81,14 @@ def generate_launch_description():
         package="bumperbot_firmware",
         executable="mpu6050_driver.py"
     )
+
+    local_imu = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([os.path.join(
+                get_package_share_directory(package_name),'launch','local_localization.launch.py'
+            )]), launch_arguments={'use_sim_time': 'false'}.items()
+    )
+
+
     
     return LaunchDescription([    
     hardware_interface,
@@ -91,5 +99,6 @@ def generate_launch_description():
     joint_broad_spawner,
     joystick,
     safety_stop,
-    imu_driver_node
+    imu_driver_node,
+    local_imu,
     ])

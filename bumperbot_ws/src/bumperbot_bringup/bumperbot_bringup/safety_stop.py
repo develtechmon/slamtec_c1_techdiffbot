@@ -107,7 +107,8 @@ class SafetyStop(Node):
                 self.zones.markers[1].color.a = 0.5
 
             elif self.state == State.DANGER:
-                is_safety_stop.data = True
+                #is_safety_stop.data = True
+                is_safety_stop.data = False
                 self.zones.markers[0].color.a = 1.0
                 self.zones.markers[1].color.a = 1.0
 
