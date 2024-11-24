@@ -66,6 +66,12 @@ def generate_launch_description():
             remappings=[('/cmd_vel_out','/diff_cont/cmd_vel_unstamped')]
         )
     
+    local_imu = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory(package_name),'launch','local_localization.launch.py'
+        )]), launch_arguments={'use_sim_time': 'true'}.items()
+    )
+    
     localization = IncludeLaunchDescription(
     PythonLaunchDescriptionSource([os.path.join(
         get_package_share_directory(package_name), 'launch', 'localization.launch.py'
@@ -87,7 +93,8 @@ def generate_launch_description():
         diff_drive_spawner,
         joint_broad_spawner,
         joystick,
-        #safety_stop,
+        safety_stop,
+        local_imu,
         localization,
         navigation,
         #rviz,

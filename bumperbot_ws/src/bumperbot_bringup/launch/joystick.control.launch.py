@@ -21,18 +21,18 @@ def generate_launch_description():
         package="joy_teleop",
         executable="joy_teleop",
         name="joy_teleop",
-        parameters=[joy_params_twist],
-        #parameters=[os.path.join(get_package_share_directory("bumperbot_bringup"), "config", "joystick_twist_mux.yaml"),
-        #           {"use_sim_time": LaunchConfiguration("use_sim_time")}],
+        #parameters=[joy_params_twist],
+        parameters=[os.path.join(get_package_share_directory("bumperbot_bringup"), "config", "joystick_twist_mux.yaml"),
+                  {"use_sim_time": LaunchConfiguration("use_sim_time")}],
     )
 
     joy_nodes = Node(
         package="joy",
         executable="joy_node",
         name="joystick",
-        parameters=[joy_params_twist],
-        #parameters=[os.path.join(get_package_share_directory("bumperbot_bringup"), "config", "joystick_twist_mux.yaml"),
-        #           {"use_sim_time": LaunchConfiguration("use_sim_time")}]
+        #parameters=[joy_params_twist],
+        parameters=[os.path.join(get_package_share_directory("bumperbot_bringup"), "config", "joystick_twist_mux.yaml"),
+                  {"use_sim_time": LaunchConfiguration("use_sim_time")}]
     )
 
     twist_mux_launch = IncludeLaunchDescription(

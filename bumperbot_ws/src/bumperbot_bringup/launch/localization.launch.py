@@ -14,7 +14,7 @@ def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     nav2_yaml = os.path.join(get_package_share_directory(package_name), 'config', 'nav2_params.yaml')
-    map_file = os.path.join(get_package_share_directory(package_name), 'map', 'map_v1.yaml')
+    map_file = os.path.join(get_package_share_directory(package_name), 'map', 'my_map_v3.yaml')
 
     #default_bt_xml_filename= os.path.join(get_package_share_directory('agv_proto'), 'config', 'navigate_w_replanning_and_recovery.xml')
     
