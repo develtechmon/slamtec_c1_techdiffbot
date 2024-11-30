@@ -158,6 +158,7 @@ This is connection IMU to Raspberry Pi
 This is additional userguide on how to install `MPU6050` in this robot. In your RPI or PC, please install this package first
 ```
 sudo apt-get install python3-smbus
+sudo apt install libi2c-dev
 pip3 install smbus
 ```
 When you run this command,
