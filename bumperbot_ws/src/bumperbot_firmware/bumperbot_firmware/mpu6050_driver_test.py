@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Imu
@@ -26,6 +27,10 @@ class MPU6050Node(Node):
             accel_data = self.sensor.get_accel_data()
             gyro_data = self.sensor.get_gyro_data()
 
+            # Apply filtering (basic example; use advanced filters like Kalman for better results)
+            accel_data = {k: max(-2.0, min(2.0, v)) for k, v in accel_data.items()}  # Clamp acceleration to [-2, 2] g
+            gyro_data = {k: max(-250.0, min(250.0, v)) for k, v in gyro_data.items()}  # Clamp gyro to [-250, 250] dps
+
             # Create and populate the IMU message
             imu_msg = Imu()
             imu_msg.header.stamp = self.get_clock().now().to_msg()
@@ -41,12 +46,17 @@ class MPU6050Node(Node):
             imu_msg.angular_velocity.y = math.radians(gyro_data['y'])
             imu_msg.angular_velocity.z = math.radians(gyro_data['z'])
 
-            # Set orientation (dummy values; update if using orientation estimation)
+            # Set orientation (keep constant if no estimation is implemented)
             imu_msg.orientation = Quaternion()
             imu_msg.orientation.x = 0.0
             imu_msg.orientation.y = 0.0
             imu_msg.orientation.z = 0.0
             imu_msg.orientation.w = 1.0
+
+            # Add covariance for sensor noise (tweak these values as needed)
+            imu_msg.orientation_covariance = [0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01]
+            imu_msg.angular_velocity_covariance = [0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01]
+            imu_msg.linear_acceleration_covariance = [0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1]
 
             # Publish the message
             self.imu_publisher.publish(imu_msg)
