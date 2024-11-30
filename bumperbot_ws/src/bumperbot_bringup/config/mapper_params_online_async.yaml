@@ -19,7 +19,7 @@ slam_toolbox:
     #mode: mapping 
 
     mode: localization
-    map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/src/bumperbot_bringup/map/serialize_my_map_v3
+    map_file_name: /home/jlukas/Desktop/My_Project/slamtec_c1_techdiffbot/bumperbot_ws/src/bumperbot_bringup/map/serialize_map_v3
     map_start_at_dock: true
 
     # if you'd like to immediately start continuing a map at a given pose

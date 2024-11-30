@@ -79,7 +79,13 @@ def generate_launch_description():
 
     imu_driver_node = Node(
         package="bumperbot_firmware",
-        executable="mpu6050_driver.py"
+        executable="mpu6050_driver_test.py"
+    )
+
+    mpu6050_driver_node = IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([os.path.join(
+                get_package_share_directory('ros2_mpu6050'),'launch','ros2_mpu6050.launch.py'
+            )])
     )
 
     local_imu = IncludeLaunchDescription(
@@ -99,6 +105,7 @@ def generate_launch_description():
     joint_broad_spawner,
     joystick,
     safety_stop,
-    imu_driver_node,
+    #imu_driver_node,
+    mpu6050_driver_node,
     local_imu,
     ])

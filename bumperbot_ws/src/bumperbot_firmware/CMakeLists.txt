@@ -70,7 +70,6 @@ install(PROGRAMS
   ${PROJECT_NAME}/simple_serial_transmitter.py
   ${PROJECT_NAME}/simple_serial_receiver.py
   ${PROJECT_NAME}/mpu6050_driver.py
-  ${PROJECT_NAME}/mpu6050_driver_test.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
